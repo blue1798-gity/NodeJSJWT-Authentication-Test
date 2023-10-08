@@ -25,8 +25,8 @@
 
       <main>
         <div class="row">
-          <label for="username">Username</label>
-          <input type="text" name="username" id="username" />
+          <label for="user">UserName</label>
+          <input type="text" name="user" id="user" />
         </div>
         <div class="row">
           <label for="password">password</label>
@@ -44,12 +44,12 @@
     <script>
       function login() {
         const data = {
-          username: document.getElementById("username").value,
+          username: document.getElementById("user").value,
           password: document.getElementById("password").value,
         };
         axios.post("api/login", data).then((res) => {
           console.log(res);
-          document.getElementById("username").value = "";
+          document.getElementById("user").value = "";
           document.getElementById("password").value = "";
           if (res && res.data && res.data.success) {
             const token = res.data.token;
